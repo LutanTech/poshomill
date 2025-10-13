@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel='shortcut icon' href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type='image/x-icon'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poshomill - Milling Services and cereals</title>
+    <meta name="description" content="Milling and Cereal services around Moi University, Eldoret">
+    <meta name="keywords" content="poshomill, milling, grain processing, flour milling, milling business, Kenya, cereals">
+    <meta name="author" content="Poshomill Grade 1 and 2">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Poshomill - Milling services and cereals supply aound Moi University, Eldoret">
+    <meta property="og:description" content="Just Call or Text for deliveries, or bookings or Purchases.">
+    <meta property="og:image" content="https://i.ibb.co/jfWmwf6/poshomill-logo.png">
+    <meta property="og:url" content="https://poshomillg1and2.pythonanywhere.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="https://poshomillg1and2.pythonanywhere.com/">
+    <meta name="twitter:title" content="Poshomill - Milling Services and cereals supply around Moi University, Eldoret">
+    <meta name="twitter:description" content="Purchase Goods, Order Goods and Book all kinds of cereals ">
+    <meta name="twitter:image" content="https://i.ibb.co/jfWmwf6/poshomill-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type='image/x-icon'>
+    <link rel="stylesheet" href="../static/styles.css?v=2.112">
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/buy.css">
+    <script src="../static/script.js?v=1"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body style="min-height:100vh !important">
+    <header class="mb up">
+        <ul class="flex col">
+            <li data-href="/"><i class="fas fa-home"></i> Home</li>
+            <li data-href="/purchase"> <i class="fas fa-dollar-sign"></i> Buy</li>
+            <li data-href="/book"><i class="fas fa-receipt"></i> Book</li>
+            <li data-href="/order"><i class="fas fa-truck"></i> Order</li>
+            <li data-href="/support"><i class="fas fa-headset"></i> Feedback</li>
+        </ul>
+    </header>
+    <div class="menu-toggle  col bdr-5 ps-fx c-p active-sc-098" style="display: flex;">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="content" style="min-height:100vh !important;height:100%;">
+    <header class="pc  row aln-cn" style="display: flex;">
+        <img class="logo-pc bdr-50 bg-w pd-5" src="https://i.ibb.co/TMBrzn3t/poshomill-logo.jpg" width="70">
+        <ul class="flex row gap-10">
+            <li data-href="/"><i class="fas fa-home"></i> Home</li>
+            <li data-href="/purchase"> <i class="fas fa-dollar-sign"></i> Buy</li>
+            <li data-href="/book"><i class="fas fa-receipt"></i> Book</li>
+            <li data-href="/order"><i class="fas fa-truck"></i> Order</li>
+            <li data-href="/support"><i class="fas fa-headset"></i> Feedback</li>
+        </ul>
+    </header>
+    <h1 class="w-100 txt-cn">Choose the type of good</h1>
+    <hr>
+<div class="goods flex wrap jst-cn aln-cn">
+    <div class="div">Grinded Maize</div>
+    <div class="div">Corn Maize</div>
+    <div class="div">Maize</div>
+    <div class="div">Cassava</div>
+    <div class="div">Sorghum</div>
+    <div class="div">Ground Nuts</div>
+    <div class="div">Beans</div>
+    <div class="div">Rice</div>
+    <div class="div">Ndengu</div>
+    <div class="div">Unga(Maize Flour)</div>
+</div>
+<p></p>
+<div class="overlay pd-0 ps-fx t-0 bg-b-0 b-0 l-0 r-0 none" style="z-index: 5000;">
+<div class="div innerOverlay bdr-10 bg-w bd-0 pd-10">
+<h3>Purchase <span id="gSpan"></span></h3>
+<h2>1Kg: <span id="kgAmount"></span></h2>
+<hr>
+<form class="quantityForm">
+    <img src="" alt="" srcset="" class="checkoutImg">
+    <input type="button" value="-" class="qty-btn">
+    <input type="number" name="quantity" id="quantity" value="1" min="1" max="100" maxlength="2">
+    <input type="button" value="+" class="qty-btn">
+  </form>
+  <div class="div grades none row n-wrap" id="grades">
+    <button type="button" id="g1" onclick="add('Grade 1','g1' )">Grade 1</button>
+    <button type="button" id="g2" onclick="add('Grade 2', 'g2')">Grade 2</button>
+  </div>
+  <div id="checkoutText">I would like to purchase <span id="kgs"></span>kgs of <span id="good"></span> <span id="c-text"></span></div>
+  <button type="button" id="checkout" onclick="proceed()"> <i class="fas fa-shopping-cart"></i> CheckOut</button>
+</div>
+
+</div>
+<div class="footer flex row wrap aln-cn">
+    <div class="div">
+        <h2>Poshomill Grade 1 & 2</h2>
+        <h4><i class="fas fa-location"></i> Moi University, Stage, Opposite Dadina Hostels</h4>
+        <h5><i class="fas fa-phone"></i>  +254 717 233 222</h5>
+    </div>
+    <div class="div txt-cn">
+        <h2>Quick Links</h2>
+        <ul style="list-style: none !important;" class="quick-links col flex gap-5 jst-cn aln-cn">
+            <li data-href="/"></i> Home</li>
+            <li data-href="/purchase">  Buy</li>
+            <li data-href="/book"> Book</li>
+            <li data-href="/order"> Order</li>
+            <li data-href="/support"></i> Feedback</li>
+        </ul>
+    </div>
+    <div class="div txt-cn">
+        <form action="" method="post">
+        <legend>
+            <label for="email">Subscribe to our Newsletter</label><p></p>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            <button id="subscribe" type="submit"><i class="fas fa-paper-plane"></i></button>
+        </legend>
+    </form>
+    </div>
+    <hr class="w-100 cl-bk bg-bk" style="background-color: black;">
+    <div class="div w-v100 txt-cn aln-cn" style="min-width: 300px !important; flex-shrink:0;"> Poshomill Grade 1 and 2 &copy; 2025<br> Designed by <a href='https://lutan-tech.is-great.org'>Lutan Technologies</a>  </div>
+</div>
+</div>
+</body>
+<script>
+
+</script>
+</html>

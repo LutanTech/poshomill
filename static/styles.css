@@ -1,0 +1,267 @@
+body, html{
+    min-width: 100%;
+    min-height: 100vh;
+    background: white;
+    width: auto;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.98rem;
+    display: flex;
+    justify-content: space-evenly !important;
+    flex-shrink: 0 !important;
+    flex-direction: column;
+    flex-grow: 1 !important;
+    max-width: none !important;
+    align-items: stretch;
+}
+.mb, .pc{
+    width: auto;
+    padding: 10px;
+    background: #5bd15b;
+    list-style: none !important;
+    max-height: 200px;
+    z-index: 1000;
+    position: relative;
+    *{
+        list-style: none !important;
+        margin:5px;
+    }
+}
+.mb{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.pc{
+    justify-content: space-between;
+    box-shadow: 0pc 10px 10px rgba(0, 0, 0, 0.173);
+    ul li{
+        padding: 5px 10px;
+        min-width: 50px;
+        background: white;
+        margin: 0 5px ;
+        text-align: center;
+        border-radius: 2px;
+        user-select: none;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &:active{
+            scale: 0.98;
+        }
+        &:hover{
+            background: rgb(64, 63, 63);
+            color: white;
+        }
+    }
+}
+.menu-toggle{
+    width: 30px;
+    padding: 10px;
+    background: red;
+    z-index: 1001;
+
+    top: 10px;
+    right: 10px;
+    span{
+        width: 100%;
+        height: 3px;
+        background: white;
+        margin: 3px auto;
+    }
+}
+@media (min-width:600px) {
+    .menu-toggle{
+        display: none !important;
+    }
+    .mb{
+        display: none !important;
+    }
+    
+}
+@media (max-width:600px) {
+    .pc{
+        display: none !important;
+    }
+    
+}
+.up{
+    transform: translateY(-150%);
+    transition: all 0.5s ease-in-out;
+}
+.down{
+    transform: translateY(-10%);
+    transition: all 0.5s ease-in-out;
+
+}
+.top-contact-div{
+    width: 100%;
+    padding: 10px 0px;
+    background: rgb(44, 43, 43);
+    justify-content: space-evenly;
+}
+.content{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.actions{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+     div{
+    min-width: 200px;
+    background: rgb(255, 255, 255);
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.208);
+    margin: 5px;
+    min-height: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: small;
+   text-align: center;
+   transition: background 0.5s ease-in-out, color 0.1s ease, scale 1s ease-in-out;
+
+    &:active{
+        scale: 0.98;
+    }
+    &:hover{
+        background: rgb(109, 4, 4);
+        color: white;
+        scale: 1.061;
+        border: 1px solid rgb(164, 150, 150);
+    }
+}
+}
+.footer{
+    background: #5bd15b;
+    justify-content: space-around !important;
+    min-height: 200px;
+    div{
+        min-width: 30% !important;
+    }
+}
+#email{
+    padding: 5px 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 0px;
+
+    outline: 2px solid white;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    &:focus{
+        outline: 2px solid rgb(72, 255, 0);
+    }
+}
+#subscribe{
+    padding: 5px 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 0px;
+
+    outline: 2px solid white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: red;
+    &:focus{
+        outline: 2px solid rgb(72, 255, 0);
+    }
+}
+button{
+    &:active{
+        scale: 0.98;
+    }
+    cursor: pointer;
+}
+.quick-links{
+    li{
+        max-width: 50px;
+        cursor: pointer;
+        &:hover{
+            color: antiquewhite;
+        }
+    }
+}
+.about{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(https://i.ibb.co/TMBrzn3t/poshomill-logo.jpg);
+    background-color: rgba(112, 64, 64, 0.763); */
+    background-blend-mode: multiply;
+    background-size: cover;
+    color: black;
+    background-position: center;
+}
+.goods{
+    max-width: 1000px;
+    margin: auto;
+    min-height: 300px;
+}
+.goods div{
+    min-width: 100px;
+    min-height: 50px;
+    max-width: 300px;
+    box-shadow:inset 10px 20px 30px rgba(0, 0, 0, 0.308);
+    margin: 5px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 900 !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    color: white !important;
+
+background-position: center;
+background-repeat: no-repeat;
+background-color: rgba(59, 2, 2, 0.392);
+background-blend-mode: multiply;
+    &:active{
+        scale: 0.98;
+    }
+    &:hover{
+        background: rgb(114, 122, 1);
+        color: white !important;
+    }
+}
+.goods div:nth-of-type(1){
+    background-image: url(https://i.ibb.co/35SgMpzQ/corn.jpg
+    );
+}.goods div:nth-of-type(2){
+    background-image: url(https://i.ibb.co/35SgMpzQ/corn.jpg
+    );
+}.goods div:nth-of-type(3){
+    background-image: url(https://i.ibb.co/PG4vZBn4/image.png
+    );
+}.goods div:nth-of-type(4){
+    background-image: url(https://i.ibb.co/whBr7xXv/image.png
+    );
+}.goods div:nth-of-type(5){
+    background-image: url(https://i.ibb.co/SzfyQdC/image.png
+    );
+}.goods div:nth-of-type(6){
+    background-image: url(https://i.ibb.co/0RjXR3zh/groundnuts.jpg
+    );
+}.goods div:nth-of-type(7){
+    background-image: url(https://i.ibb.co/mCLM4nkM/beans.jpg);
+}
+.goods div:nth-of-type(8){
+    background-image: url(https://i.ibb.co/LD9XXJp8/rice.jpg    );
+}
+.goods div:nth-of-type(9){
+    background-image: url(https://i.ibb.co/M5jK4R9n/image.png);
+}
+.goods div:nth-of-type(10){
+    background-image: url(https://i.ibb.co/0j13MWSW/image.png);
+}

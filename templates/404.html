@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel='icon' href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type='image/x-icon'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poshomill</title>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+ <link rel="stylesheet" href="../static/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .img404{
+        width:80%;
+        margin:10px auto;
+        border-bottom: 1px solid black;
+        top:0;
+        min-width: 400px;
+        max-width: 600px;
+
+    }
+    .back_home_link{
+    width:50%;
+    background: linear-gradient(to right, green, blue, aqua);
+    text-align: center;
+    padding: 10px;
+    color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    }
+    h2{
+        text-decoration: double;
+        font-style: italic;
+    }
+</style>
+</head>
+
+<body>
+    <img src="../static/images/404.gif" alt="" class="img404">
+    <h2 id="error-message"></h2>
+    <p></p>
+    <a href="/" class="back_home_link">
+        back Home
+    </a>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const messages = [
+        "Damn! We lost the mill...",
+        "Out of stock… just like this page.",
+        "This page ran out of flour… and sense.",
+        "Oops! This page got milled into nothingness.",
+        "No grains, no gains—this page is missing!",
+        "Like a broken sieve, this page lets everything through.",
+        "404: The mill’s closed, try another path.",
+        "Even the posho mill couldn’t grind out this page.",
+        "We searched the granary, but this page is empty.",
+        "Gone like yesterday’s ugali scraps…",
+        "This page was here, then it got refined away.",
+        "Even a Jembe can’t dig up this page!",
+        "Maybe it’s at the next kiosk?",
+        "Pole sana! This page is MIA.",
+        "The data got processed like maize meal.",
+        "This link got ground into dust!",
+        "A rat ate this page—try another one.",
+        "No flour, no page, no service.",
+        "Even Google can’t sift through this mess.",
+        "Your request was valid, but the mill jammed.",
+        "Like a broken belt, this page isn’t moving anywhere."
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("error-message").textContent = randomMessage;
+});
+
+    </script>
+    </html>

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel='icon' href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type='image/x-icon'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poshomill</title>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .img404{
+        width:50%;
+        margin:10px auto;
+        border-bottom: 1px solid black;
+        top:0;
+        min-width: 400px;
+        max-width: 450px;
+
+    }
+    .back_home_link{
+    width:50%;
+    background: linear-gradient(to right, green, blue, aqua);
+    text-align: center;
+    padding: 10px;
+    color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    }
+    h2{
+        text-decoration: double;
+        font-style: italic;
+    }
+</style>
+</head>
+
+<body>
+    <h3 style='color:red;'>Page Not Found</h3>
+    <img src="https://poshomillg1and2.pythonanywhere.com/static/images/404.gif" alt="" class="img404">
+
+    <h4 id="error-message"></h4>
+    <p></p>
+    <a href="/" class="back_home_link">
+        back Home
+    </a>
+    </body>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = [
+        '<i class="fas fa-exclamation-triangle"></i> Damn! We lost the mill...',
+        '<i class="fas fa-store-slash"></i> Out of stock… just like this page.',
+        '<i class="fas fa-wind"></i> This page got milled into nothingness.',
+        '<i class="fas fa-bread-slice"></i> No grains, no gains—this page is missing!',
+        '<i class="fas fa-search"></i> We searched the granary, but this page is empty.',
+        '<i class="fas fa-ghost"></i> Gone like yesterday’s ugali scraps…',
+        '<i class="fas fa-toolbox"></i> 404: The mill’s closed, try another path.',
+        '<i class="fas fa-ban"></i> Even the posho mill couldn’t grind out this page.',
+        '<i class="fas fa-mug-hot"></i> Maybe it’s at the next kiosk?',
+        '<i class="fas fa-exclamation-circle"></i> Pole sana! This page is MIA.',
+        '<i class="fas fa-drumstick-bite"></i> A rat ate this page—try another one.',
+        '<i class="fas fa-server"></i> Your request was valid, but the mill jammed.',
+        '<i class="fas fa-hourglass-half"></i> Like a broken sieve, this page lets everything through.',
+        '<i class="fas fa-cloud-moon"></i> Even Google can’t sift through this mess.',
+        '<i class="fas fa-sad-tear"></i> No flour, no page, no service.',
+        '<i class="fas fa-tools"></i> This link got ground into dust!',
+        '<i class="fas fa-road"></i> Maybe take a different route?',
+        '<i class="fas fa-spider"></i> A web error? More like a spider got it.',
+        '<i class="fas fa-lightbulb"></i> Try turning it off and on again… oh wait.',
+        '<i class="fas fa-door-closed"></i> This door to the page is shut tight.'
+    ];
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("error-message").innerHTML = randomMessage;
+});
+
+    </script>
+    </html>

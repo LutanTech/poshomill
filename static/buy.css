@@ -1,0 +1,94 @@
+.innerOverlay{
+    width: 90%;
+    margin: auto;
+    min-width: 300px;
+    max-width: 600px;
+}
+.quantityForm input[type='button']{
+    padding: 2px 10px;
+    font-weight: 900;
+    font-size: x-large;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+}
+.quantityForm {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.quantityForm input[type='number'] {
+  padding: 5px;
+  font-weight: 900;
+  font-size: x-large;
+  width: 60px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: 2px solid #ffffff;
+  background-color: #ffffff;
+  color: #7a0000;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: all 0.3s ease;
+}
+
+.quantityForm input[type='number']:focus {
+  outline: none;
+  /* box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+  border-color: #cc0000; */
+}
+
+.qty-btn {
+  background-color: #b30000;
+  color: white;
+  border: none;
+  font-size: x-large;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.qty-btn:hover {
+  background-color: #e60000;
+  transform: scale(1.1);
+}
+#checkoutText{
+    display: none;
+}
+#checkout{
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    outline: 2px solid black;
+    border: 2px solid white;
+    background: green;
+    color: white;
+    font-size: larger;
+
+
+}
+.checkoutImg{
+    max-width: 200px;
+}
+#grades{
+display: flex;
+justify-content: space-around;
+ button{
+    padding: 10px;
+    min-width: 50px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 10px black;
+
+}
+    button.active{
+    background: linear-gradient(to top, rgb(9, 0, 88), #000);
+    color: white;
+}
+}

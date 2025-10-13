@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel='icon' href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type='image/x-icon'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poshomill</title>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+ <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+ <link rel="stylesheet" href="../static/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+
+  <div class="menu" id="navigationpane">
+    <div class="togglemenu" id="togglemenu" onclick="menushow()">
+      <div id="qas">
+        <span id="spanqas">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.36 32.78">
+            <defs>
+              <style>
+              .cls-1 {
+                fill: #ffffff;
+              }
+              </style>
+            </defs>
+            <g id="Layer_1-2">
+              <g>
+                <path class="cls-1"
+                  d="m1.84,3.65h35.68c1.01,0,1.83-.82,1.83-1.83s-.82-1.83-1.83-1.83H1.84C.83,0,.02.82.02,1.83s.82,1.83,1.83,1.83Z" />
+                <path class="cls-1"
+                  d="m1.84,18.22h35.68c1.01,0,1.83-.82,1.83-1.83s-.82-1.83-1.83-1.83H1.84C.83,14.57.02,15.39.02,16.39s.82,1.83,1.83,1.83Z" />
+                <path class="cls-1" d="m0,30.98c0,.97.83,1.8,1.85,1.8h26.99v-3.65H1.85c-1.02,0-1.85.83-1.85,1.85Z" />
+                <path class="cls-1"
+                  d="m37.51,29.13h-5.02v3.65h5.02c1.02,0,1.85-.83,1.85-1.8,0-1.02-.83-1.85-1.85-1.85Z" />
+              </g>
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="navigationwrapper">
+      <h1>Poshomill Grade 1 and Grade 2</h1>
+      <b style="color:#fff">Contact Information </b>
+      <p></p>
+      <b>Phone:</b><a href="tel:+254717233222">+254 717 233222</a>
+      <p>
+        <b>Whatsapp:</b><a href="https://wa.me/254717233222?text=Hello, Mark.">+254 717 233222</a><br>
+      <div class="svg-wrapper">
+        <button onclick="viewnav()">
+          <i class="fas fa-box-open"></i><br> All Goods
+      </button>
+      <button onclick="buygoodsflash()">
+        <i class="fas fa-shopping-bag"></i><br> Buy Goods
+    </button>
+        <button onclick="buygoodsflash()">
+          <i class="fas fa-truck"></i><br> Order Delivery
+      </button>
+        <button onclick="buygoodsflash()">
+          <i class="fas fa-shopping-cart"></i><br> Book Goods
+      </button>
+          <button id="sgds" onclick="searchgoodsflash()">
+            <i class="fas fa-search"></i><br> Search Goods
+        </button>
+<br>
+        <div id="dontact">
+          Click <a href="javascript:void(0)" onclick="removedont()"> here </a> to activate the information page you
+          deactivated
+        </div>
+        <form>
+          <button id="reload" type="submit" style="display:none;">button</button>
+        </form>
+      </div>
+      </p>
+      <p>
+        <br><a href="https://lutan-tech.is-great.org" target='_blank'>Designed by Lutan Tech </a>
+      <p>
+        2025 &copy; All rights reserved.
+      </p>
+    </div>
+  </div>
+
+  <div class="loadersave" id="loadersave"></div>
+  <div id="no-internet">
+    <div class="no-internet">
+      <div class="loaderinternet">
+      </div>
+      <br>
+      <b>Trying to reconnect...</b>
+    </div>
+  </div>
+  <div id="loadermain">
+    <div class="loadermain">
+    </div>
+  </div>
+  <div id="loaderbackground">
+    <div class="loader" id="loader">
+    </div>
+    <div id="okaysave">
+      <div class="tick"></div>
+      <p>
+        <button id="saveokay">Done</button>
+      </p>
+    </div>
+
+  </div>
+    <div id="landing-loading-page">
+    <div id="profile-pics-and-infoDiv"></div>
+    <br>
+
+    <div class="loaderloadingpage" style='margin-bottom:0 !important; '></div>
+    <br>
+    <div class="head">
+      <div class="loadercheck"></div>
+    </div>
+    <br><b style="font-family: 'segoe script';">Checking the security of your connection...</b>
+    <br>
+    <footer>
+      2025 &copy; <a href="https://lutan-tech.is-great.org" target='_blank'>Lutan Technologies Ltd.</a><br>All
+      rights reserved.
+    </footer>
+  </div>
+  <div id="input-name-background">
+    <div id="input-name">
+      <form onsubmit="return false">
+        <label for="Username">Input your name:<i style="color:red; font-size:smaller;"> At least 3
+            characters</i></label>
+        <p></p>
+        <input id="Username" type="text" required maxlength="20"><br>
+        This is for identification purposes only.<p></p>
+        <button id="SaveName" type="submit"> Done</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="info-backg">
+    <div id="info-backginner">
+      <img src="https://i.ibb.co/rxdnK4w/poshomill-logo.jpg" alt="logo">
+
+      <br>
+      <hr>
+
+      We are located at Moi University, Main campus, stage area opposite View/ Dadina Accomodations. <br> We deal with
+      all types of cereals verified and certifiable maize flour with all required health standards and offer services at
+      affordable prices.
+      <p style="text-align:left;">
+        Cereals Available:
+      <p style="text-align:left;">
+        <li>Maize</li>
+        <li>Wheat</li>
+        <li>Corn maize</li>
+        <li>Sorghum</li>
+        <li>Groundnuts </li>
+        <li>Ndengu</li>
+        <li>Cassava</li>
+        <li>Rice</li>
+        <li>Beans</li>
+      </p>
+      </p>
+      <b id="anime">Free deliveries around stage, chebarus, Kesses, Cheptiret and its environs. </b>
+      <hr>
+
+      <button type="button" id="continue">Got it</button><br>
+      <input type="radio" id="dontshow" onchange="dsi()">
+      <label for="dontshow">Don't show this information again</label>
+      <p>
+        Welcome
+      </p>
+      <p>
+        ...
+      </p>
+    </div>
+  </div>
+  <div class="padding-home-page-welcome">
+    <div class="header">
+      <button onclick="viewnav()">
+        <i class="fas fa-box-open"></i><br> All Goods
+    </button>
+    <button onclick="buygoodsflashM()">
+      <i class="fas fa-shopping-bag"></i><br> Buy Goods
+  </button>
+      <button onclick="buygoodsflashM()">
+        <i class="fas fa-truck"></i><br> Order Delivery
+    </button>
+      <button onclick="buygoodsflashM()">
+        <i class="fas fa-shopping-cart"></i><br> Book Goods
+    </button>
+        <button onclick="searchgoodsflashM()">
+          <i class="fas fa-search" onclick="document.getElementById('open_ai').click();"></i><br> Search Goods
+      </button>
+      <a href="/support">
+        <button>
+          <i class="fas fa-headset"></i><br>Feedback
+      </button>
+      </a>
+    </div>
+    <div class="all_cover">
+      <div class="gallery_btn" onclick="document.querySelector('.gallery_div').classList.toggle('seen')" >Gallery</div>
+      <div class="padding-home-page-welcome-cover" style='min-height:100vh;'>
+        <b style="font-family: 'segoe print'; font-size:1em">
+          <h3 style="color:red !important" >Welcome <span id="welcomeName" style="color:blue" ;>customer</span> to Grade 1 and grade 2 Poshomill.</h3>
+        </b>
+        <hr>
+        <span class="open_ai"><i class="fas fa-search" id="open_ai" onclick="document.getElementById('pf_div').classList.toggle('appear');"></i>
+        </span>
+        <div class="results-input-border" id="pf_div">
+
+          <span class="close_btn"  onclick="document.getElementById('pf_div').classList.remove('appear')">&times;</span>
+          <div id="search-div" >
+            <form onsubmit="return false">
+              <input type="search" id="searchQuery" placeholder="Search..." required onforminput="divaiload()">
+              <button type="submit" onclick="divaiload()" id="search-btn">🔍</button>
+
+            </form>
+          </div>
+          <div class="ailoader" id="ailoader"></div>
+          <div id="results" style="z-index: 30000000 !important;"></div>
+        </div>
+        <p></p>
+        <div class="gallery_div">
+          <div class="gallery_close" style="font-size: larger; font-weight: 900; color: red; background: orange; width: 30px; aspect-ratio: 1; border-radius: 50%; position: fixed; right: 20px; top: 20px; cursor: pointer;" onclick="document.querySelector('.gallery_div').classList.toggle('seen')">&times;</div>
+            <div class='img_div'>
+            <img src="../static/images/img1.jpeg" alt="">
+            <img src="../static/images/img 2.jpg" alt="">
+            <img src="../static/images/img 3.jpg" alt="">
+            <img src="../static/images/img 4.jpg" alt="">
+            <img src="../static/images/img 5.jpg" alt="">
+            </div>
+        </div>
+        <div id="all-cereals-availableDiv">
+          <div id="all-cereals-availableDivinner">
+
+            <div class="scene">
+              <div class="ring">
+                <i></i><i></i><i></i>
+                <i></i><i></i><i></i>
+              </div>
+
+              <div id="all_goods_view">
+                <button id="allcerealsclose" type="reset" onclick="ViewPricesclose()"><span>&#X2716;</span></button>
+                <table id="allgoods" border='1'>
+                  <th>Item</th>
+                  <th>Price per Gorogoro(2kgs)</th>
+
+                  <tr>
+                    <td>Maize</td>
+                    <td>Ksh. 130 </td>
+                  </tr>
+                  <td>Grinded Maize</td>
+                  <td>Ksh. 140</td>
+                  <tr>
+                    <td>Corn Maize</td>
+
+                    <td>Ksh. 400</td>
+                  </tr>
+                  <hr>
+                  <i style="color:red;">NOTE: 1 Gorogoro refers to 2kgs.</i>
+                  <tr>
+                    <td>Millet</td>
+                    <td>Ksh. 300</td>
+                  </tr>
+
+                  <tr>
+                    <td>Wheat</td>
+                    <td>Ksh. 250 </td>
+                  </tr>
+                  <td>Sorghum</td>
+                  <td>Ksh. 250</td>
+                  <tr>
+
+                    <td>Groundnuts</td>
+
+                    <td>Ksh. 500</td>
+                  </tr>
+                  <hr>
+                  <tr>
+                    <td>Cassava</td>
+                    <td>Ksh. 250</td>
+                  </tr>
+                  <td> Ndengu</td>
+                  <td>Ksh. 450</td>
+                </table>
+              </div>
+              <div class="ring">
+                <i></i><i></i><i></i>
+                <i></i><i></i><i></i>
+
+              </div>
+
+              <div id="all_goods_view">
+                <table id="allgoods" border='1'>
+
+                  <th>Item</th>
+                  <th>Price per 1kg</th>
+
+                  <tr>
+                    <td>Maize</td>
+                    <td>Ksh. 65 </td>
+                  </tr>
+                  <td>Grinded Maize</td>
+                  <td>Ksh. 70</td>
+                  <tr>
+                    <td>Corn Maize</td>
+
+                    <td>Ksh. 200</td>
+                  </tr>
+                  <hr>
+                  <i style="color:red;">Prices per 1kg.</i>
+                  <tr>
+                    <td>Millet</td>
+                    <td>Ksh. 150</td>
+                  </tr>
+
+                  <tr>
+                    <td>Wheat</td>
+                    <td>Ksh. 125 </td>
+                  </tr>
+                  <td>Sorghum</td>
+                  <td>Ksh. 125</td>
+                  <tr>
+
+                    <td>Groundnuts</td>
+
+                    <td>Ksh. 250</td>
+                  </tr>
+                  <hr>
+                  <tr>
+                    <td>Cassava</td>
+                    <td>Ksh. 125</td>
+                  </tr>
+                  <td> Ndengu</td>
+                  <td>Ksh. 225</td>
+                </table>
+
+              </div>
+              <div class="ring">
+                <i></i><i></i><i></i>
+                <i></i><i></i><i></i>
+
+              </div>
+
+              <div id="all_goods_view">
+                <table id="allgoods" border='1'>
+
+                  <th>Item</th>
+                  <th>Price per 1/2kg</th>
+
+                  <tr>
+                    <td>Maize</td>
+                    <td>Ksh. 25 </td>
+                  </tr>
+                  <td>Grinded Maize</td>
+                  <td>Ksh. 30</td>
+                  <tr>
+                    <td>Corn Maize</td>
+
+                    <td>Ksh. 100</td>
+                  </tr>
+                  <hr>
+                  <i style="color:red;">Prices per 1/2kg.</i>
+                  <tr>
+                    <td>Millet</td>
+                    <td>Ksh. 75</td>
+                  </tr>
+
+                  <tr>
+                    <td>Wheat</td>
+                    <td>Ksh. 65 </td>
+                  </tr>
+                  <td>Sorghum</td>
+                  <td>Ksh. 65</td>
+                  <tr>
+
+                    <td>Groundnuts</td>
+
+                    <td>Ksh. 125</td>
+                  </tr>
+                  <hr>
+                  <tr>
+                    <td>Cassava</td>
+                    <td>Ksh. 65</td>
+                  </tr>
+                  <td> Ndengu</td>
+                  <td>Ksh. 115</td>
+                </table>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="results-input-border">
+          <div class="imagesContainer">
+            <div class="scrolling-wrapper">
+              <div class="label-container">
+                <div class="labelbackg" style="background: transparent; border: none;"></div>
+                <div class="labelbackg">
+                  beans
+                </div>
+                <div class="labelbackg">
+                  corn Maize
+                </div>
+                <div class="labelbackg">
+                 Flour
+                </div>
+                <div class="labelbackg">
+                  groundnuts
+                </div>
+                <div class="labelbackg">
+                  maize
+                </div>
+                <div class="labelbackg">
+                  rice
+                </div>
+                <div class="labelbackg">
+                  wheat
+                </div>
+                 <div class="labelbackg">
+                  Millet
+                </div>
+                <br>
+              </div>
+              <img src="https://i.ibb.co/rxdnK4w/poshomill-logo.jpg" alt="logo">
+              <img src="https://i.ibb.co/CWwv3jq/beans.jpg" id="beans" border="0">
+              <img src="https://i.ibb.co/y4qcm42/corn.jpg" id="corn" border="0">
+              <img src="../static/images/flour.jpeg" id="finger-millet" border="0">
+              <img src="https://i.ibb.co/zFdp2xM/groundnuts.jpg" alt="groundnuts" border="0"></a>
+              <img src="https://i.ibb.co/P64s1zF/white-maize.webp" alt="white-maize" border="0">
+              <img src="https://i.ibb.co/HTLCH6P/millet.webp" id="millet" border="0">
+              <img src="https://i.ibb.co/t3PLDq5/rice.jpg" id="rice" border="0">
+              <img src="https://i.ibb.co/Z8Gpg3j/wheat.jpg" id="wheat" border="0">
+            </div>
+            <div class="unga-div" id="unga-div">
+              <div class="unga-div-inner">
+                <p> <b>Maize Exchange:</b> Ksh.20 per gorogoro</p>
+                <b style="font-size:larger;">Unga(<i>Maize Flour</i>)</b>
+                <br>
+                <li><b>Grade 1:</b> Ksh. 80</li>
+                <li><b>Grade 2:</b> Ksh. 70</li>
+                <button onclick="ungasee()">Done</button>
+              </div>
+            </div>
+          </div>
+          <label for="What43edo7yout34want">What do you want to do today?</label>
+          <select id="What43edo7yout34want" onchange="checkvalue()" style='text-align:center;'>
+            <option value="">-Select-</option>
+            <option value="Kusiaga">Kusiaga</option>
+            <option value="Buy Cereals">Buy cereals/Unga(maize flour)</option>
+            <option value="Book Cereals">Book Goods to Pickup Later</option>
+            <option value="Order Delivery">Order Room Delivery</option>
+            <option value="View Goods">Just View available goods</option>
+          </select>
+          <div id="flour-making-items_border">
+            <h2>Kusiaga Prices</h2>
+
+            <table id="prices_and_names" border="1" style="width:95%; margin:auto;">
+              <tr>
+                <th style="border:1; left:-10px; background: #12FF00;">Cereal type</th>
+                <th style="border:1; left:-10px; background: #12FF00;">Price per Gorogoro (2kgs)</th>
+              </tr>
+              <tr>
+                <td>Maize</td>
+                <td>Ksh. 20</td>
+              <tr></tr>
+              <td>Millet</td>
+              <td>Ksh. 30</td>
+              <tr></tr>
+              <td>Wheat</td>
+              <td>Ksh. 30</td>
+              <tr>
+                <td>Sorghum </td>
+                <td>Ksh. 30</td>
+              <tr>
+                <td>Groundnuts</td>
+                <td>Ksh. 30</td>
+              <tr>
+                <td>Cassava</td>
+                <td>Ksh. 30</td>
+              </tr>
+              </tr>
+              </tr>
+              </tr>
+              </tr>
+              </tr>
+              </tr>
+            </table>
+          </div>
+          <p></p>
+          <div id="buy_cereals_Main">
+            <b> What goods would you like to <span id="state"></span>?</b>
+            <div class="buttons_flex">
+              <button>Grinded Maize</button>
+              <button>Corn Maize</button>
+              <button>Maize</button>
+              <button>Sorghum</button>
+              <button>Cassava</button>
+              <button>Ground nuts</button>
+              <button>Beans</button>
+              <button>Rice</button>
+              <button>Ndengu</button>
+              <button>Unga(<i>Maize flour</i>)</button>
+            </div>
+          </div>
+          <button onclick="ungasee()">View Unga prices</button>
+          <button type="button" onclick="ViewPrices()">View all Cereal prices</button>
+          <hr>
+          <div id='till_div' style='background: linear-gradient(45deg, #03ff55, transparent, #0f0);
+    padding: 4px;
+    /* border-radius: 10px; */
+    box-shadow: 0px 0px 10px #5c00ff;
+    max-width: 228px;
+    border: 1px solid;
+    margin: auto;'><b>Payment Via Till:</b> <i><b style='color:red; font-size:larger;'> 8161674 </b></i></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="product-selected-div-specifications">
+    <!--delivery info input-->
+    <div id="deliveryInfoBackground">
+      <div id="deliveryInfo">
+        <p></p>
+        <form onsubmit="return false">
+          <h1>Enter your Details here</h1><br>
+          <hr>
+          <label for="locality">Select your area</label>
+          <select id="locality" required>
+            <option value="">-select area-</option>
+            <option value="stage">Stage</option>
+            <option value="chebarus">Chebarus</option>
+            <option value="mabs">Mabs</option>
+            <option value="Kesses">Kesses</option>
+            <option value="cheptiret">Cheptiret</option>
+          </select>
+          <br>
+          <label for="apartment">Enter the name of your apartment:</label><br>
+          <input type="text" id="apartment" style="text-transform: uppercase;" minLength='2' required>
+          <br>
+          <label for="roomno">Room No:</label><br>
+          <input type="text" id="roomno" maxlength="10" style="text-transform: uppercase;" required>
+          <br>
+          <label for="phonenumber">Enter your phone Number:</label><br>
+          <input type="tel" id="phonenumber" required inputmode="tel" minLength='10'>
+          <br>
+          <button type="submit" id="savedeliveryinfo">Submit</button>
+          <hr>
+        </form>
+      </div>
+    </div>
+    <!--ends here-->
+
+    <div id="product-selected-div-specifications-inner">
+      <div class="all-inner-cover">
+        <form action="" method="none" onsubmit="return false;">
+
+          <h2>Product Selection</h2>
+          <span id="close-product-selection-button" type="reset"
+            onclick="closeProductSelection()"><span>&#X2716;</span></span>
+
+          <p>
+            <span id="Buyersname"></span>, You've indicated that you'd like to <span id="status"></span> <span
+              id="itemselected"></span>.
+          </p>
+          <div class="border" style='width:90%';>
+            <label for="Quantityval">How many Kgs of <span id="itemselectedb"></span> would you like to <span
+                id="statusb"></span></label><br>
+            <form>
+              <input type="number" id="Quantity" placeholder="Enter number of Kgs." min="1" maxlength="2" disabled>
+
+              <button type="reset" id="clear">Clear</button>
+              <br>1kg = Ksh. <span id="priceinner"></span><br>
+              Total: <b><span id="Total">0</span></b>
+
+          </div>
+          <div class="border">
+            <div id="unga-grade" style="text-align:left;place-content:left; justify-content:left; align-items:left">
+
+              <p><button id="G1" type="button" value="Grade 1">
+                  Grade 1</button>
+                <button id="G2" type="button" value="Grade 2">
+                  Grade 2</button>
+                <br>
+                <i style="color:red">* Use the Clear button above to reset</i>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <div class="border">
+      <div id="delivery">
+        <i style="color :red; font-size: smaller;"> *Please fill in delivery details in this field.</i><br>
+        Click <a href="javascript:void(0)" onclick="sdi()"> here</a> to add delivery address<br>
+        <input type="button" id="sdbtn" onclick="sdi()" value="Add Delivery Info" readonly="">
+      </div>
+    </div>
+    <div class="border">
+      <div id="bookdates">
+        <label for="dateInput">Enter the date you'll pick up your goods below. Maximum period is 7 days from today.
+
+          <i style="color:red; font-size:small;">
+
+            <br>*We are not liable for any goods left uncollected beyond 7 days unless in an event of prior
+            agreement.</i></label>
+        <p>
+        </p>
+        <input type="date" id="dateInput">
+      </div>
+    </div>
+    <div class="border">
+      <div id="paid">
+        <p></p>
+        Already paid? Click the button below<p></p>
+        <label class="switch">
+          <div id="both">
+            <input id="paid-true" type="checkbox" required>
+            <span class="slider" id="slider"></span>
+          </div>
+          <p></p>
+        </label>
+        <p></p>
+      </div>
+    </div>
+    <hr>
+    <div class="border">
+      <div id="mpesadet">
+        <b>
+          <p></p>
+          Input the name that will appear after payment.<br>
+          <i style="color:rgb(0, 68, 255); font-size:smaller">* This is for record and transparency purposes only.</i>
+          <input type="text" id="mpnminput" placeholder="MPESA NAME" style="text-transform:uppercase;" required>
+
+      </div>
+    </div>
+    <div class="border">
+      <div id="cart-over">
+        <b>
+          <p></p>
+          This is the selection you've made. Do you want to proceed with this?
+        </b>
+        <hr>
+        <div id="Cart">
+          <b style="color:green;">Hello, I'm <span id="customerName"></span> and I would like to <span
+              id="statusofservice"></span> the following.</b>.
+          <p>
+            <b>Item:</b> <span id="ItemType"></span>.
+          </p>
+          <p>
+            <b>Quantity:</b> <span id="Quantitydisp"></span>.
+          </p>
+          <div id="mpname">
+            <p>
+
+              <b>MPESA name:</b> <span id="Mpesaname" style="text-transform:uppercase;"></span>.
+            </p>
+          </div>
+          <div id="Pickupdate">
+            <b>Pick up date:</b><span id="innerdate"></span>.
+          </div>
+          <div id="deliverydetails">
+            <br>
+            <b>Locality:</b> <span id="locality-output"></span>
+            <p>
+              <b>Apartment:</b> <span id="apartment-output"></span>
+            </p>
+            <b>Room No:</b> <span id="roomno-output"></span>
+            <p>
+              <b>Mobile Number:</b> <span id="mobileno-output"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="border">
+      <button onclick="prepareSend()" id="proceed-btn" disabled>Proceed</button>
+      </form>
+      <button onclick="closeProductSelection()">Back</button>
+    </div>
+    <p>
+      ...
+    </p>
+    <hr>
+  </div>
+  </div>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+<script src="../static/js/script.js"></script>
+
+</html>

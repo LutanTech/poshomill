@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Booked - Admin</title>
+<link rel="shortcut icon" href="https://i.ibb.co/jfWmwf6/poshomill-logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    button.delete-btn {
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button.delete-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Booked Dashboard</h2>
+<a href="https://poshomillg1and2.ct.ws/admin_page/orders/"> See Orders</a>
+<table id="orders-table">
+  <thead>
+    <tr>
+      <th>ID</th><th>Name</th><th>Phone</th><th>Product</th><th>Quantity</th><th>Date</th><th>Instructions</th><th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Orders will load here -->
+  </tbody>
+</table>
+
+<script>
+async function fetchOrders() {
+  try {
+    const res = await fetch('https://poshomillg1and2.pythonanywhere.com/booked');
+    if(!res.ok) throw new Error('Failed to fetch orders');
+    const orders = await res.json();
+    
+    const tbody = document.querySelector('#orders-table tbody');
+    tbody.innerHTML = ''; // Clear old data
+    
+    orders.forEach(order => {
+      const tr = document.createElement('tr');
+      
+      tr.innerHTML = `
+        <td>${order.id}</td>
+        <td>${order.name}</td>
+        <td>${order.phone}</td>
+        <td>${order.product}</td>
+        <td>${order.quantity}</td>
+        <td>${order.date}</td>
+        <td>${order.instructions || ''}</td>
+        <td><button class="delete-btn" data-id="${order.id}">Delete</button></td>
+      `;
+      
+      tbody.appendChild(tr);
+    });
+
+    // Add click listeners to delete buttons
+    document.querySelectorAll('.delete-btn').forEach(button => {
+      button.onclick = () => deleteOrder(button.dataset.id);
+    });
+
+  } catch (err) {
+    Swal.fire('Oops!', err.message, 'error');
+  }
+}
+
+async function deleteOrder(id) {
+  const confirmed = await Swal.fire({
+    title: 'Are you sure?',
+    text: `Delete order ${id}? This action cannot be undone!`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yep, delete it!',
+    cancelButtonText: 'Nope, keep it'
+  });
+
+  if (confirmed.isConfirmed) {
+    try {
+      const res = await fetch(`https://poshomillg1and2.pythonanywhere.com/booked/${id}`, { method: 'DELETE' });
+      const data = await res.json();
+      
+      if(data.status === 'success') {
+        Swal.fire('Deleted!', `Order ${id} has been deleted.`, 'success');
+        fetchOrders();  // Refresh the table
+      } else {
+        throw new Error(data.error || 'Delete failed');
+      }
+    } catch (err) {
+      Swal.fire('Error!', err.message, 'error');
+    }
+  }
+}
+
+// Load orders when page loads
+window.onload = fetchOrders;
+</script>
+
+</body>
+</html>
